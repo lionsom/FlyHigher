@@ -131,33 +131,49 @@ Empty(L): 判空操作，若表L为空表，则返回true，否则返回false。
 
 
 
+如何一个数据元素的大小？` sizeof(ElemType)`
 
-
-#### 静态分配
-
-如何一个数据元素的大小？` **sizeof(ElemType)**`
-
-
+**静态分配**
 
 ```c
-#define	MaxSize 50    //定义线性表的最大长度
+#define	MaxSize 50    			//定义线性表的最大长度
 typedef	struct{
-	ElemType data[MaxSize];	// 用静态的『数组』存放顺序表的元素
-	int	length;				// 顺序表当前的长度
-}Sqlist;	// 顺序表的类型定义（静态分配方式） Sq:Sequence 顺序、序列
+	ElemType data[MaxSize];		// 用静态的『数组』存放顺序表的元素
+	int	length;								// 顺序表当前的长度
+} Sqlist;										// 顺序表的类型定义（静态分配方式） Sq:Sequence 顺序、序列
 ```
 
-
-
-#### 动态分配
+**动态分配**
 
 ```C
-#define	MaxSize 100    //定义表长
+#define	InitSize 100    	// 表长度的初始定义，后续可扩展
 typedef	struct{
-	ElemType *data;		//动态分配数祖的指针
-	int	MaxSize,length;	//数组最大容量和当前个数
-}Sqlist;	//类型定义
+	ElemType *data;					// 动态分配数组的指针
+	int	MaxSize, length;		// 数组最大容量和当前个数
+} Seqlist;								// 动态分配数组的类型定义
 ```
+
+
+
+#### 插入操作
+
+
+
+
+
+#### 删除操作
+
+
+
+#### 按值查找（顺序查找）
+
+
+
+
+
+
+
+
 
 
 
