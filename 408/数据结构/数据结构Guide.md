@@ -269,9 +269,12 @@ typedef struct LNode{	//节点类型
     >
     > 1. 类似单链表的头插法、尾插法
     > 2. 类似单链表的删除结点
-    >     循环单链表：类似单链表
-    >     循环双链表：类似双链表
-    >     **[静态链表](https://www.zhihu.com/search?q=静态链表&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"article"%2C"sourceId"%3A165229143})\*：**利用数组结构来存储链表，起点为0，终点为-1
+    >
+    > 循环单链表：类似单链表
+    >
+    > 循环双链表：类似双链表
+    >
+    > **[静态链表](https://www.zhihu.com/search?q=静态链表&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"article"%2C"sourceId"%3A165229143})\*：**利用数组结构来存储链表，起点为0，终点为-1
     >
     > **注意：**对链表结构的插入和删除操作常考选择题，链表要注意**头结点**这个概念。
 
@@ -281,7 +284,7 @@ typedef struct LNode{	//节点类型
 
 ## 栈
 
-#### 基本概念
+### 基本概念
 
 > 只能在一端进行插入和删除的线性表。重点掌握顺序栈的结构。
 >
@@ -289,9 +292,15 @@ typedef struct LNode{	//节点类型
 
 
 
+### 应用
 
 
-#### 应用
+
+【题型】：给出入栈序列，**推导出栈序列个数，或者与队列结合**。
+
+> n个不同元素进栈，有种不同的出栈排列？
+
+
 
 
 
