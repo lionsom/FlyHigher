@@ -10,17 +10,15 @@
 
 [408数据结构——绪论&复杂度分析](https://blog.csdn.net/qq_21457395/article/details/120381958)
 
-
-
 [冷月手撕408之数据结构(1)-导论](https://cloud.tencent.com/developer/article/1790830)
-
-
 
 [数据结构线性表（王道随书408考研）](https://www.codeleading.com/article/21576059920/)
 
-
-
 [408数据结构——线性表](https://blog.csdn.net/qq_21457395/article/details/121326143)
+
+参考：https://juejin.cn/user/606586151647870/posts
+
+
 
 
 
@@ -172,26 +170,141 @@ Empty(L): 判空操作，若表L为空表，则返回true，否则返回false。
 ```C
 // 如何一个数据元素的大小？
 sizeof(ElemType)
+```
 
-// 静态分配
-#define	MaxSize 50    			// 定义线性表的最大长度
-typedef	struct{
-	ElemType data[MaxSize];		// 用静态的『数组』存放顺序表的元素
-	int	length;					// 顺序表当前的长度
-} Sqlist;						// 顺序表的类型定义（静态分配方式） Sq:Sequence 顺序、序列
+```C
+#include <stdio.h>
+#include <stdlib.h>
 
-// 动态分配
-#define	InitSize 100    	// 表长度的初始定义，后续可扩展
-typedef	struct{
-	ElemType *data;					// 动态分配数组的指针
-	int	MaxSize, length;		// 数组最大容量和当前个数
-} Seqlist;								// 动态分配数组的类型定义
+// 宏定义
+#define MAXSIZE 10      //定义最大长度
+#define ElemType int    //定义顺序表存储的类型，可自行设置
 
-// 插入操作
+//========================== 初始化 InitList 静态数组 ==========================
 
-// 删除操作
+// 顺序存储结构的线性表的类型
+typedef struct {
+    ElemType data[MAXSIZE]; //用『静态数组』存放数据元素
+    int length;             //顺序表的当前长度
+}SqList;                    //顺序表的类型定义（静态分配方式） Sq:Sequence 顺序、序列
 
-// 按值查找（顺序查找）
+// 顺序表初始化一：静态数组
+SqList InitList() {
+    SqList L;
+    L.length = 0;
+    return L;
+}
+
+// 顺序表初始化二：静态数组
+// C语言中是不存在引用传参，仅仅是取地址符。所以GCC编译不过。
+// 解决方案:
+//      1.用指针传参代替引用传参（代码如下InitList_2_1）；
+//      2.将代码保存成.cpp文件(c++中支持引用)。
+void InitList_2(SqList &L) {
+    for (int i = 0; i < MAXSIZE; i++) {
+        L.data[i] = 0;
+    }
+    L.length = 0;
+}
+
+// 指针传参：静态数组
+void InitList_2_1(SqList *L) {
+    for (int i = 0; i < MAXSIZE; i++) {
+        L->data[i] = 0;    //赋默认值，否则会有脏数据
+    }
+    L->length = 0;
+}
+
+//========================== 初始化 InitList 动态数组 ==========================
+
+typedef struct{
+    ElemType *data;     //动态分配数组的指针
+    int maxSize;        //顺序表最大容量
+    int length;         //顺序表当前长度
+}SeqList;               //顺序表的类型定义（动态分配方式）
+
+// 顺序表初始化三：动态分配数组
+void InitList_3(SeqList *L) {
+    L->data = (ElemType *)malloc(MAXSIZE * sizeof(ElemType));
+    L->length = 0;
+    L->maxSize = MAXSIZE;
+}
+
+void IncreaseSize(SeqList &L, int len) {
+    ElemType *p = L.data;
+    L.data = (ElemType *)malloc((L.maxSize + len) * sizeof(ElemType));
+    for (int i = 0; i < L.length; i++) {
+        L.data[i] = p[i];           //将数据复制到新区域
+    }
+    L.maxSize = L.maxSize + len;    //顺序表最大长度增加len
+    free(p);                        //是否原内存空间
+}
+
+//========================== 插入 ==========================
+/*	
+ * 在顺序表 L LL 的第 i ii (1<=i<=L.length+1)个位置上插入新元素 e
+ * 判断 i 的位置是否合法
+ * 第 i 个元素及气候依次从后移动一个位置
+ * 顺序表长度 加1
+ */
+bool ListInsert(SqList &L, int i, ElemType e) {
+    if (i <= 0 || i > L.length + 1) { // 插入位置是否合法
+        return false;
+    }
+    if (L.length >= MAXSIZE) {     // 空间是否已满
+        return false;
+    }
+    for (int j = L.length; i >= j ; j--) {
+        L.data[j] = L.data[j-1];    // 将第i个元素及之后的元素向后移动
+    }
+    L.data[i-1] = e;    // 在位置i处插入e
+    L.length++;         // 线性表长度 +1
+    return true;
+}
+
+//========================== 删除 ==========================
+
+/*
+ * 删除顺序表 L LL 中的第 i ii（1<=i<=L.length） 个位置,用引用变量 e ee 返回
+ * 判断 i ii 的位置是否合法，否则返回false
+ * 合法则将被删除元素赋予引用变量 e,把i+1个元素及其后的所有元素往前移动一个位置，返回true
+ */
+bool ListDelete(SqList &L, int i, ElemType &e) {
+    if (i <= 0 || i > L.length) {
+        return false;
+    }
+
+    e = L.data[i - 1];   //将被删除的元素赋予e
+
+    for (int j = i; j < L.length; j++) {
+        L.data[j - 1] = L.data[j]; 
+    }
+    
+    L.length--;
+    return true;
+}
+
+//========================== main ==========================
+
+int main() {
+    // 方式一
+    SqList L1 = InitList();
+  
+    // 方式二
+    SqList L2;          // 声明一个线性表
+    InitList_2(L2);     // 初始化该线性表
+    InitList_2_1(&L2);  // 初始化该线性表
+    
+    // 方式三
+    SeqList L3;
+    InitList_3(&L3);
+    printf("L3最大长度为 %d a",L3.maxSize);
+    // 动态扩大空间
+    IncreaseSize(L3, 12);
+    printf("\nL3动态增加空间后的最大长度为 %d a",L3.maxSize);
+    
+    return 0;
+}
 ```
 
 
