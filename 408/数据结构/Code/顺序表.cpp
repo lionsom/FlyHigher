@@ -66,7 +66,64 @@ void IncreaseSize(SeqList &L, int len) {
 }
 
 
+//========================== 插入 ==========================
 
+/*	
+ * 在顺序表 L LL 的第 i ii (1<=i<=L.length+1)个位置上插入新元素 e
+ * 判断 i 的位置是否合法
+ * 第 i 个元素及气候依次从后移动一个位置
+ * 顺序表长度 加1
+ */
+bool ListInsert(SqList &L, int i, ElemType e) {
+    if (i <= 0 || i > L.length + 1) { // 插入位置是否合法
+        return false;
+    }
+    if (L.length >= MAXSIZE) {     // 空间是否已满
+        return false;
+    }
+    for (int j = L.length; i >= j ; j--) {
+        L.data[j] = L.data[j-1];    // 将第i个元素及之后的元素向后移动
+    }
+    L.data[i-1] = e;    // 在位置i处插入e
+    L.length++;         // 线性表长度 +1
+    return true;
+}
+
+//========================== 删除 ==========================
+
+/*
+ * 删除顺序表 L LL 中的第 i ii（1<=i<=L.length） 个位置,用引用变量 e ee 返回
+ * 判断 i ii 的位置是否合法，否则返回false
+ * 合法则将被删除元素赋予引用变量 e,把i+1个元素及其后的所有元素往前移动一个位置，返回true
+ */
+bool ListDelete(SqList &L, int i, ElemType &e) {
+    if (i <= 0 || i > L.length) {
+        return false;
+    }
+
+    e = L.data[i - 1];   //将被删除的元素赋予e
+
+    for (int j = i; j < L.length; j++) {
+        L.data[j - 1] = L.data[j]; 
+    }
+
+    L.length--;
+    return true;
+}
+
+//========================== 查找 ==========================
+
+/*
+ * 在顺序表 L 中查找第一个元素值等于e的元素，并返回其位序 
+ */
+int LocateElem(SqList &L, ElemType &e) {
+    for (int i = 0; i < L.length; i++) {
+        if (L.data[i] == e) {
+            return i + 1;      // 数组下标为e的元素,其位序为  i+1
+        }   
+    }
+    return 0;
+}
 
 //========================== main ==========================
 
