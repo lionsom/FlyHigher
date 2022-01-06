@@ -311,17 +311,138 @@ int main() {
 
 ## 2.2.链表
 
-
-
 ### 单链表
 
+**定义一个单链表**
+
 ```C
+struct LNode {						// 定义单链表结点类
+  	ElemType data;				// 每个节点存放一个数据元素
+  	struct LNode *next;		// 指针指向下一个节点
+};
+
+//
+typedef <数据类型> <别名>
+// 将struct LNode 取一个别名 LNode
+typedef struct LNode Lnode;  
+
 // 单链表节点
 typedef struct LNode{	//节点类型
 	ElemType data;	//数据域
 	Struct LNode *next;	//指针域
-}LNode;
+}LNode, *LinkList;
+
+// 创建一个新节点，在内存中申请一个节点所需空间，并用指针p指向这个节点
+struct LNode *p = (struct LNode *)malloc(sizeof(struct LNode));
+// 别名写法
+LNode *p = (LNode *)malloc(sizeof(LNode));
 ```
+
+**表示一个单链表**
+
+```c
+// 要表示一个单链表时，只需要声明一个头指针L，指向单链表的第一个节点
+LNode *L;			
+LinkList L;
+
+// 强调这是一个单链表 --- 使用LinkList
+// 强调这是一个节点  	--- 使用LNode *
+
+// eg: 获取链表的第i个节点并返回该节点
+LNode * GetElem(LinkList L, int i) {
+  //...
+}
+```
+
+**不带头结点的单链表**
+
+```c
+typdef struct LNode {
+  	ElemType data;
+  	struct LNode *next;
+}LNode, *LinkList;
+
+// 初始化一个空的单链表
+bool InitList(LinkList &L) {
+ 		L = NULL;
+  	return true;
+}
+
+// 判空
+bool Empty(LinkList L) {
+ 		return (L == NULL);
+}
+
+void test(){
+  	LinkList L;		// 声明一个指向单链表的指针
+  	InitList(L)   // 初始化一个空表
+    Empty(L)
+}
+```
+
+**带头结点的单链表【推荐】**
+
+```c
+typdef struct LNode {
+  	ElemType data;
+  	struct LNode *next;
+}LNode, *LinkList;
+
+bool InitList(LinkList &L){
+ 		L = (LNode *)malloc(sizeof(LNode));   // 创建一个头结点
+  	if (L == NULL) 
+      	return false;
+  	L->next = NULL;			// 头结点之后暂时还没有节点
+  	return true;
+}
+
+bool Empty(LinkList L){
+ 		if(L->next == NULL)
+     		return true;
+    else
+  			return false;
+}
+
+void test(){
+  	LinkList L;		// 声明一个指向单链表的指针
+  	InitList(L)   // 初始化一个空表
+    Empty(L)
+}
+```
+
+**引入头结点的好处？**
+
+* 第1个位置的插入删除更加方便
+
+  若使用头结点，则第1个位置的插入和删除都是对p—>next进行操作，而不用动p本身，而且减少了算法分支（即if else分支）。
+
+  若没有头结点，在第1个位置插入或删除时，需要动头指针。
+
+* 统一空表与非空表的处理
+
+  若使用头结点，**无论表是否为空，头指针都指向头结点，也就是\*LNode类型**，对于空表和非空表的操作是一致的。
+
+  若不使用头结点，**当表非空时，头指针指向第1个结点的地址，即\*LNode类型，但是对于空表，头指针指向的是NULL**，此时空表和非空表的操作是不一致的。
+
+
+
+#### 单链表的插入与删除
+
+* 插入
+  * 按位序插入
+    * 带头结点
+    * 不带头结点
+  * 指定结点的后插操作
+  * 指定结点的前插操作
+* 删除
+  * 按位序删除
+  * 指定结点的删除
+
+
+
+
+
+
 
 ### 创建单链表
 
