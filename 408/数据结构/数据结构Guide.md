@@ -364,13 +364,13 @@ typdef struct LNode {
 
 // 初始化一个空的单链表
 bool InitList(LinkList &L) {
- 		L = NULL;
+ 	L = NULL;
   	return true;
 }
 
 // 判空
 bool Empty(LinkList L) {
- 		return (L == NULL);
+ 	return (L == NULL);
 }
 
 void test(){
@@ -388,8 +388,8 @@ typdef struct LNode {
   	struct LNode *next;
 }LNode, *LinkList;
 
-bool InitList(LinkList &L){
- 		L = (LNode *)malloc(sizeof(LNode));   // 创建一个头结点
+bool InitList(LinkList &L) {
+ 	L = (LNode *)malloc(sizeof(LNode));   // 创建一个头结点
   	if (L == NULL) 
       	return false;
   	L->next = NULL;			// 头结点之后暂时还没有节点
@@ -397,10 +397,10 @@ bool InitList(LinkList &L){
 }
 
 bool Empty(LinkList L){
- 		if(L->next == NULL)
-     		return true;
+ 	if(L->next == NULL)
+     	return true;
     else
-  			return false;
+  		return false;
 }
 
 void test(){
@@ -445,14 +445,14 @@ void test(){
 ```c
 // 逆向创建单链表（带头结点）
 LinkList List_HeadInsert(LinkList &L) {
- 		LNode *s;
+ 	LNode *s;
   	L = (LinkList)malloc(sizeof(LNode));   // 创建头结点
   	L->next = NULL;						// 初始化为空链表，否则会指向内存中未知内存，脏数据
   	
   	int x;
   	scanf("%d", &x);
   	while(x!=9999) {
-     		s = (LNode *)malloc(sizeof(LNode));   // 创建新结点
+     	s = (LNode *)malloc(sizeof(LNode));   // 创建新结点
       	s->data = NULL;
       	s->next = L->next;
       	L->next = s;						// 将新结点插入表中，L为头指针
@@ -484,7 +484,7 @@ LinkList List_HeadInsert(LinkList &L) {
 ```c
 // 正向创建单链表（带头结点）
 LinkList List_TailInsert(LinkList &L) {
- 		L = (LinkList)malloc(sizeof(LNode));
+ 	L = (LinkList)malloc(sizeof(LNode));
   	L->next = NULL;
   	
   	LNode *s;
@@ -493,7 +493,7 @@ LinkList List_TailInsert(LinkList &L) {
   	int x;
   	scanf("%d", &x);
   	while(x!=9999) {
-     		s = (LNode *)malloc(sizeof(LNode));  // 创建新结点
+     	s = (LNode *)malloc(sizeof(LNode));  // 创建新结点
       	s->data = x;
       	r->next = s;
       	r = s;				// r指向新的表尾结点
@@ -517,7 +517,7 @@ LinkList List_TailInsert(LinkList &L) {
 ```c
 // 带头结点
 LNode *GetElem(LinkList L, int i) {
-		if (i <= 0)		// 若i<=0，不合法，则返回NULL
+	if (i <= 0)		// 若i<=0，不合法，则返回NULL
       	return NULL;
   	int j = 1;	// 计数，初始为1	
   	LNode *p = L->next;		// 第一个结点，而非头结点
@@ -529,7 +529,7 @@ LNode *GetElem(LinkList L, int i) {
 }
 
 LNode *GetElem(LinkList L, int i) {
-		if (i < 0)
+	if (i < 0)
       	return NULL;
   	LNode *p;   // 指针p指向当前扫描到的结点
   	int j = 0;	// 当前从第0个结点开始
@@ -565,7 +565,7 @@ LNode * LocateElem(LinkList L, ElemType e) {
 
 ```c
 int Lenght(LinkList L) {
-		LNode *p = L;
+	LNode *p = L;
   	int len = 0;		// 统计表长
   	while(p != NULL) {     // while(p->next != NULL) {
      		p = p->next; 
@@ -638,7 +638,13 @@ s->data = temp;
 
 
 
-#### 循环链表
+### 循环链表
+
+
+
+### 静态链表
+
+
 
 
 
