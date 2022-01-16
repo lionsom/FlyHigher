@@ -20,6 +20,8 @@
 
 
 
+[408数据结构之线性表 - 代码参考](https://blog.csdn.net/weixin_43903780/article/details/115175997?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_title~default-0.pc_relevant_paycolumn_v2&spm=1001.2101.3001.4242.1&utm_relevant_index=3)
+
 
 
 # 408考察方式
@@ -561,22 +563,6 @@ LNode * LocateElem(LinkList L, ElemType e) {
 
 
 
-#### 求单链表长
-
-```c
-int Lenght(LinkList L) {
-	LNode *p = L;
-  	int len = 0;		// 统计表长
-  	while(p != NULL) {     // while(p->next != NULL) {
-     		p = p->next; 
-    		len++;
-    }
-  	return len;
-}
-```
-
-
-
 #### 单链表的插入与删除
 
 > * 插入
@@ -609,6 +595,10 @@ p->next = s;
 
 **扩展：对指定结点进行前插操作**
 
+> * 将 *s 插到 *p 的后面
+> * 将p->data 与s->data互换
+> * 时间复杂度为 O ( 1 ) 
+
 ```c
 //
 s->next = p->next;
@@ -623,36 +613,159 @@ s->data = temp;
 
 **删除结点操作 - 删除第i个结点**
 
+> ![](media_Guide/单链表删除结点.png)
+>
+> - 将单链表第**i**个结点删除，先检查删除位置是否合法
+> - 找到第**i-1**个结点，即前驱结点p
+> - 将p的`next`指针指向q的下一个节点
+
+```c
+if (i <= 0)
+		return -1;
+LNode *p = GetElem(L, i-1);
+LNode *q = p->next; 
+p->next = q->next;
+free(q);
 ```
+
+**扩展：对指定结点进行删除操作**
+
+> * 将 *p 的后继结点 *q 的值赋予 p，然后删除后继结点
+> * 将p->data 与p->next->data互换
+> * 释放掉 *q 节点
+> * 时间复杂度为 O ( 1 ) 
+
+```c
+q = p->next;
+p->data = q->data;
+p->next = q->next;
+free(q);
 ```
 
 
 
-**删除结点操作 - 删除指定结点p**
+#### 求单链表长
+
+```c
+int Lenght(LinkList L) {
+	LNode *p = L;
+  	int len = 0;		// 统计表长
+  	while(p != NULL) {     // while(p->next != NULL) {
+     		p = p->next; 
+    		len++;
+    }
+  	return len;
+}
+```
 
 
 
 ### 双链表
 
-**双链表的插入**
+> ![](media_Guide/双链表.png)
+>
+> 双链表有两个指针*prior*和*next*，分别指向*前驱结点*和*后继结点*
+>
+> 插入、删除时间复杂度为 O ( 1 ) 
+
+```C
+typedef struct DNode{					//定义双链表类型
+		ElemType data;							//数据域
+		struct DNode *prior,*next;	//前驱指针和后继指针
+}DNode;
+```
+
+
+
+#### 双链表的插入
+
+> ![](media_Guide/双链表插入.png)
+>
+> ① s->next=p->next; 
+>
+> ② p->next->prior=s; 
+>
+> ③ s->prior=p; 
+>
+> ④ p->next=s;
+>
+> * ※第 **①** 步和第 **②** 步必需在第四步之前，否则 ***p** 的后继结点的指针会丢失，导致插入失败
+
+
+
+#### 双链表的删除
+
+> ![](media_Guide/双链表删除.png)
+>
+> ① p->next=q->next; 
+>
+> ② q->next->prior=p; 
+>
+> free (q);
 
 
 
 ### 循环链表
 
+#### 循环单链表
+
+> ![](media_Guide/循环单链表.png)
+
+
+
+**单链表与循环单链表**
+
+>![](media_Guide/单链表与循环单链表.png)
+>
+>
+>
+>![](media_Guide/循环单链表空表.png)
+>
+>**空表判断**：判断头结点 next 是否指向自身（`L->next == L`）。
+>
+>**表尾判断**：判断下一个结点是否等于L（`if(p->next == L)`）。
+
+
+
+#### 循环双链表
+
+**双链表与循环双链表**
+
+>![](media_Guide/双链表与循环双链表.png)
+>
+>![](media_Guide/循环双链表空表.png)
+>
+>**空表判断**：判断头结点 next 是否指向自身（`L->next == L && L->prior == L` ）。
+>
+>**表尾判断**：判断下一个结点是否等于L（`if(p->next == L)`）。
+
 
 
 ### 静态链表
 
+> ![](media_Guide/静态链表.png)
+>
+> **① 静态链表借助数组描述线性表的链式存储结构**
+> **② 结点也有数据域data和指针域next，不过这里的指针指的是结点的相对地址（数组下标）**
+> **③ 静态链表也要预先分配一块连续的内存空间**
+>
+> - 静态链表以**next ==-1**作为结束标志
+> - 插入、删除操作与动态链表相同，只需要修改指针，不需要移动元素
+> - 总体来说，静态链表没有单链表使用方便，当时对于不支持指针的高级语言来说（如：Basic），是一种非常巧妙的设计方法。
 
-
-
+```c
+#define MaxSize 50	//静态链表的最大长度
+typedef struct{			//静态链表结构类型的定义
+	ElemType data;		//存储数据元素
+	int next;					//下一个元素的数组下标
+}SLinkList[MaxSize];
+```
 
 
 
 ## 2.3.顺序表和链表的比较
 
-**1.存取方式**
+**1.存取（读写）方式**
 
 ```
 顺序表：顺序存取，随机存取
@@ -670,14 +783,12 @@ s->data = temp;
 **3.查找、插入和删除操作**
 
 ```
-对于按值查找，顺序表无序时，两者的时间复杂度均为O(n),顺序表有序时采用折半查找，
-时间复杂度为O(logn)
+对于按值查找，顺序表无序时，两者的时间复杂度均为O(n),顺序表有序时采用折半查找，时间复杂度为O(log2n)
 
 对于按序号查找，顺序表支持随机访问,时间复杂度仅为O(1),链表的平均复杂度为O(n)
 
 顺序表的插入、删除操作，平均需要移动半个表长的元素，链表的插入删除只需修改相关指针域
 由于链表的每个结点带有指针域，故存储密度<1
-1234567
 ```
 
 **4.空间分配**
