@@ -14,8 +14,6 @@
 
 [数据结构线性表（王道随书408考研）](https://www.codeleading.com/article/21576059920/)
 
-[408数据结构——线性表](https://blog.csdn.net/qq_21457395/article/details/121326143)
-
 参考：https://juejin.cn/user/606586151647870/posts
 
 
@@ -79,6 +77,8 @@
 
 
 # 第二章：线性表
+
+[408数据结构——线性表](https://blog.csdn.net/qq_21457395/article/details/121326143)
 
 **线性表(Linear List)**是具有<u>**相同数据类型**</u>的n(n>=0)个**数据元素**的**有限**序列，当表长n为0的时候，为空表。
 
