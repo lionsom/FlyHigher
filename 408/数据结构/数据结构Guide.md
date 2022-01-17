@@ -49,7 +49,7 @@
 - 索引存储：建立一张索引表，搜索时先查表
 - 散列存储：哈希存储
 
-![](media_Guide/算法.png)
+![](media_Guide/第一章/算法.png)
 
 在绪论中，理解算法的评价标准。时间复杂度和空间复杂度。时间复杂度要知道怎么计算的。
 
@@ -111,7 +111,7 @@ Empty(L): 判空操作，若表L为空表，则返回true，否则返回false。
 
 **位序**：线性表中元素的位序是从 1 开始的，而数组中的元素下标是从 0 开始的，这个非常重要，应用时需区分清楚。
 
-![](media_Guide/线性表.png)
+![](media_Guide/第二章/线性表.png)
 
 线性表分为**顺序表**和**链表**。
 
@@ -131,7 +131,7 @@ Empty(L): 判空操作，若表L为空表，则返回true，否则返回false。
 
 - 逻辑上相邻的两个元素在物理位置上也相邻。
 
-![](media_Guide/顺序表（顺序存储）.png)
+![](media_Guide/第二章/顺序表（顺序存储）.png)
 
 ### 顺序表特点
 
@@ -149,21 +149,21 @@ Empty(L): 判空操作，若表L为空表，则返回true，否则返回false。
     最坏情况：在表头插入，元素后移语句将执行n次，时间复杂度为O(n)
     平均情况：平均时间复杂度为O(n)**
 
-    ![](media_Guide/顺序表插入操作时间复杂度.png)
+    ![](media_Guide/第二章/顺序表插入操作时间复杂度.png)
 
 * **顺序表删除操作：
     最好情况：删除表尾元素，无需移动元素，时间复杂度为O(1)
     最坏情况：删除表头元素，需要移动除第一个元素外的所有元素，时间复杂度为O(n)
     平均情况：平均时间复杂度为O(n)**
 
-    ![](media_Guide/顺序表删除操作时间复杂度.png)
+    ![](media_Guide/第二章/顺序表删除操作时间复杂度.png)
 
 * **顺序表按值查找（顺序查找）：
     最好情况：查找的元素就在表头，仅需比较一次，时间复杂度为O(1)
     最坏情况：查找的元素在表尾或不存在时，需要比较n次，时间复杂度为O(n)
     平均情况：平均时间复杂度为O(n)**
 
-    ![](media_Guide/顺序表查找操作时间复杂度.png)
+    ![](media_Guide/第二章/顺序表查找操作时间复杂度.png)
 
 
 
@@ -436,7 +436,7 @@ void test(){
 
 > * 采用头插法建立单链表时，读入数据的顺序与生成的链表的元素顺序是相反的
 >
-> ![](media_Guide/单链表头插法.png)
+> ![](media_Guide/第二章/单链表头插法.png)
 >
 > - 从一个`空表`开始，通过`头插法`建立单链表的结点，以插入S所指的结点为例
 >
@@ -476,7 +476,7 @@ LinkList List_HeadInsert(LinkList &L) {
 
 > * 采用尾插法建立单链表时，读入数据的顺序与生成的链表的元素顺序是相同的
 >
-> ![](media_Guide/单链表尾插法.png)
+> ![](media_Guide/第二章/单链表尾插法.png)
 >
 > * 从一个空表开始，通过尾插法建立单链表的结点，以插入S所指的结点为例
 >   ①为了将新结点每次都插入当前链表的表尾，需要增加一个尾指针r,一开始在头结点，最后始终会指向链表的尾结点
@@ -577,7 +577,7 @@ LNode * LocateElem(LinkList L, ElemType e) {
 
 **插入结点操作 - 后插操作**
 
-> ![](media_Guide/单链表插入节点.png)
+> ![](media_Guide/第二章/单链表插入节点.png)
 >
 > * 将值为 s 的新结点插入到单链表的第 i 个位置，先检查i的位置是否合法
 >
@@ -613,7 +613,7 @@ s->data = temp;
 
 **删除结点操作 - 删除第i个结点**
 
-> ![](media_Guide/单链表删除结点.png)
+> ![](media_Guide/第二章/单链表删除结点.png)
 >
 > - 将单链表第**i**个结点删除，先检查删除位置是否合法
 > - 找到第**i-1**个结点，即前驱结点p
@@ -662,7 +662,7 @@ int Lenght(LinkList L) {
 
 ### 双链表
 
-> ![](media_Guide/双链表.png)
+> ![](media_Guide/第二章/双链表.png)
 >
 > 双链表有两个指针*prior*和*next*，分别指向*前驱结点*和*后继结点*
 >
@@ -679,7 +679,7 @@ typedef struct DNode{					//定义双链表类型
 
 #### 双链表的插入
 
-> ![](media_Guide/双链表插入.png)
+> ![](media_Guide/第二章/双链表插入.png)
 >
 > ① s->next=p->next; 
 >
@@ -695,7 +695,7 @@ typedef struct DNode{					//定义双链表类型
 
 #### 双链表的删除
 
-> ![](media_Guide/双链表删除.png)
+> ![](media_Guide/第二章/双链表删除.png)
 >
 > ① p->next=q->next; 
 >
@@ -709,17 +709,17 @@ typedef struct DNode{					//定义双链表类型
 
 #### 循环单链表
 
-> ![](media_Guide/循环单链表.png)
+> ![](media_Guide/第二章/循环单链表.png)
 
 
 
 **单链表与循环单链表**
 
->![](media_Guide/单链表与循环单链表.png)
+>![](media_Guide/第二章/单链表与循环单链表.png)
 >
 >
 >
->![](media_Guide/循环单链表空表.png)
+>![](media_Guide/第二章/循环单链表空表.png)
 >
 >**空表判断**：判断头结点 next 是否指向自身（`L->next == L`）。
 >
@@ -731,9 +731,9 @@ typedef struct DNode{					//定义双链表类型
 
 **双链表与循环双链表**
 
->![](media_Guide/双链表与循环双链表.png)
+>![](media_Guide/第二章/双链表与循环双链表.png)
 >
->![](media_Guide/循环双链表空表.png)
+>![](media_Guide/第二章/循环双链表空表.png)
 >
 >**空表判断**：判断头结点 next 是否指向自身（`L->next == L && L->prior == L` ）。
 >
@@ -743,7 +743,7 @@ typedef struct DNode{					//定义双链表类型
 
 ### 静态链表
 
-> ![](media_Guide/静态链表.png)
+> ![](media_Guide/第二章/静态链表.png)
 >
 > **① 静态链表借助数组描述线性表的链式存储结构**
 > **② 结点也有数据域data和指针域next，不过这里的指针指的是结点的相对地址（数组下标）**
@@ -841,19 +841,220 @@ typedef struct{			//静态链表结构类型的定义
 
 # 第三章：栈与队列
 
+> 考纲内容
+>
+> - 栈和队列的基本概念
+> - 栈和队列的顺序存储结构
+> - 栈和队列的链式存储结构
+> - 栈和队列的应用
+> - 特殊矩阵的压缩存储
+>
+> 要求内容
+>
+> - 栈和队列各种存储结构的特点
+> - 数组和特殊矩阵的压缩存储
+
+![](media_Guide/第三章/栈与队列.png)
+
 ## 栈
+
+[408数据结构——栈和队列](https://blog.csdn.net/qq_21457395/article/details/121721713?spm=1001.2014.3001.5501)
 
 ### 基本概念
 
-> 只能在一端进行插入和删除的线性表。重点掌握顺序栈的结构。
+> - 栈 (**Stack**) 是**只允许在一端进行插入或者删除操作**的**线性表**
 >
-> 栈的操作特性可以概括为：**后进先出（LIFO）**
+> * 栈的操作特性可以概括为：**后进先出（LIFO）**
+> * 栈的数学性质： n 个不同的元素进栈，出栈元素不同的排列个数为，该公式称为卡特兰数（Catalan）
+
+![](media_Guide/第三章/栈.png)
+
+**基本操作**
+
+```C
+//【注意】算法题中，若题干没有做限制，可直接使用基本的操作函数
+InitStack(&S)  	// 初始化一个栈
+StackEmpty(S)		// 判断栈是否为空，为空放回true，否则返回false
+Push(&S,x)			// 进栈，若栈没满，则加入元素x成为新栈顶
+Pop(&S,&x)			// 出栈，若栈非空，则弹出栈顶元素并用x返回
+GetTop(S,&x)		// 读取栈顶元素，若栈非空则用x返回栈顶元素
+DestroyStack(&S)// 销毁栈并释放存储空间 
+```
+
+
+
+### 栈的顺序存储结构
+
+#### 顺序栈
+
+> - 采用**顺序存储**的栈称为顺序栈，利用一组地址连续的存储单元存放自栈底到栈顶的数据元素，同时设一个指针（**top**）指向当前栈顶的元素
+
+```c
+#define MaxSize 50	//定义栈中元素最大个数
+typedef struct{
+	Elemtype data[MaxSize];	//存放栈中元素
+	int top;	//栈顶元素
+}SqStack;
+```
+
+- 栈顶指针：S.top，初始设置**S.top= -1**（有些辅导书从0开始）；栈顶元素**S.data[S.top]**
+- 进栈操作，栈不满时，栈顶指针先加 **1** ,再送值到栈顶元素
+- 出栈操作：先取栈顶元素，再将栈顶指针减**1**
+- 栈空条件：**S.top=-1**; 栈满条件：**S.top==MaxSize-1**; 栈长：**S.top+1**
+
+#### 顺序栈的基本运算
+
+```C
+void test() {
+		SqStack S;		// 声明一个顺序栈
+  	InitStack(S); // 初始化
+}
+```
+
+(1)初始化
+
+```cpp
+void InistStack(Sqstack &S){
+	S.top = -1;	//初始化栈顶指针
+}
+```
+
+(2)判断空
+
+```cpp
+bool StackEmpty(Sqstack &S){
+	if(S.top == -1)	//栈空
+		return true;
+	else	//栈不空
+		return false;
+}
+```
+
+(3)进栈
+**S.top =S.top+1 和 S.data[S.top] = x 等价于 S.data[++S.top]=x**;
+
+```cpp
+bool Push(SqStack &S, ElemType x){
+	if(S.top == MaxSize-1)	//栈满，报错
+		return false;
+	S.data[++S.top] = x;	//指针先加1，再入栈
+	return true;
+}
+```
+
+(4)出栈
+**S.data[S.top] = x和 S.top = S.top-1 等价于 x=S.data[S.top-- ]**;
+
+```cpp
+bool Pop(SqStack &S, ElemType &x){
+	if(S.top == -1)	//栈空，报错
+		return false;
+	x = S.data[S.top--];	//先出栈，指针再减1
+	return true;
+}
+```
+
+(5)读栈顶元素
+仅读取栈顶元素，并没有执行出栈操作，原栈顶元素依然保留在栈中
+
+```cpp
+bool GetTop(Sqstack S,ElemType &x){
+	if(S.top == -1)	//栈空，报错
+		return false;
+	x = S.data[S.top];	//x记录栈顶元素
+	return true;
+}
+```
+
+注意
+
+- 这里的**top**指向的是栈顶元素，所以进栈操作为**S.data[++S.top]=x**,出栈操作为**x=S.data[S.top --];**
+- 若栈顶指针初始为S.top=0，则**top**指向栈顶元素的下一个位置，这样入栈操作变为 **S.data[S.top++]=x**，先入栈，指针再加1；出栈操作变为 **x=S.data[ --S.top]**，指针先减1，再出栈
+
+
+
+#### 共享栈
+
+> - 利用栈底位置相对不变的特性，可以让两个顺序栈共享一个一维数组空间
+> - 把两个栈的栈底分别设置在共享空间的两端，然后两个栈顶向共享空间的中间延伸
+
+![](media_Guide/第三章/共享栈.png)
+
+- 两个栈的栈顶指针都指向栈顶元素，**top0=-1**时0号栈为空，**top1=MaxSize**时1号栈为空
+- 仅当两个栈顶指针相邻（**top1-top0=1**）时，为栈满
+- 0号栈进栈时栈顶指针top0先加1再赋值，1号栈进栈时top1先减1再赋值，出栈时则刚好相反
+- 共享栈是为了更有效的利用存储空间，两个栈的空间相互调节，整个存储空间被占满才会上溢，存取数据的时间复杂度为O ( 1 ) O(1)*O*(1)
+
+#### 共享栈的基本运算
+
+```c
+#define MaxSize 50		//两个共享栈所能达到的最大长度
+#define Elemtype int	//假设元素类型为整数型
+typedef struct{
+	Elemtype stack [MaxSize];
+	int top[2]；//top为两个栈顶指针
+}stk;
+stk s;	//定义的结构体变量
+```
+
+```c
+// (1)入栈操作
+// i为栈号，i=0为左边的栈top0,i=1为右边的栈top1
+// 入栈成功返回1，否则返回0
+int Push(int i,Elemtype x){
+	if(i<0||i>1){
+		printf("栈号输入错误");
+		exit(0);
+	}
+	if(s.top[1]-s.top[0]==1){
+		printf("栈已满");
+		return 0;
+	}
+	switch(i){
+		case 0: s.stack[++s.top[0]]=x; return 1; break;
+		case 1: s.stack[--s.top[1]]=x; return 1; 
+	}
+}	
+
+// (2)退栈操作
+// 退栈成功返回退栈元素，否则返回-1
+int Pop(int i,Elemtype x){
+	if(i<0||i>1){
+		printf("栈号输入错误");
+		exit(0);
+	}
+	switch(i){
+	case 0: 
+		if(s.top[0]==1){
+		printf("栈空");
+		return -1;
+	}
+	else
+		return s.stack[s.top[0]--];
+	case 1:
+		if(s.top[1]==MaxSize){
+			printf("栈空");
+			return -1;
+		}
+		else
+			return s.stack[s.top[1]++];
+	}//switch
+}	
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
 ### 应用
-
-
 
 【题型】：给出入栈序列，**推导出栈序列个数，或者与队列结合**。
 
@@ -886,11 +1087,11 @@ typedef struct{			//静态链表结构类型的定义
 
 - 矩阵压缩存储（选）
 
-> \1. 矩阵的压缩存储是套路题，做法如下：
-> (1)看题，分析是按行存储还是按列存储
-> (2)找出等差/等比规律
-> (3)求[等差数列](https://www.zhihu.com/search?q=等差数列&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"article"%2C"sourceId"%3A165229143})/等比数列和，确定出压缩公式
-> \2. 稀疏矩阵的存取方式：三元组、[十字链表](https://www.zhihu.com/search?q=十字链表&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"article"%2C"sourceId"%3A165229143})、行逻辑链接顺序表
+> 1. 矩阵的压缩存储是套路题，做法如下：
+>    (1)看题，分析是按行存储还是按列存储
+>    (2)找出等差/等比规律
+>    (3)求[等差数列](https://www.zhihu.com/search?q=等差数列&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"article"%2C"sourceId"%3A165229143})/等比数列和，确定出压缩公式
+> 2. 稀疏矩阵的存取方式：三元组、[十字链表](https://www.zhihu.com/search?q=十字链表&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra={"sourceType"%3A"article"%2C"sourceId"%3A165229143})、行逻辑链接顺序表
 
 
 
