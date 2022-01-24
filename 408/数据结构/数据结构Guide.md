@@ -454,7 +454,7 @@ LinkList List_HeadInsert(LinkList &L) {
   	int x;
   	scanf("%d", &x);
   	while(x!=9999) {
-     	s = (LNode *)malloc(sizeof(LNode));   // 创建新结点
+     		s = (LNode *)malloc(sizeof(LNode));   // 创建新结点
       	s->data = NULL;
       	s->next = L->next;
       	L->next = s;						// 将新结点插入表中，L为头指针
@@ -1048,29 +1048,128 @@ int Pop(int i,Elemtype x){
 
 #### 链栈
 
+> 带头结点 与 不带头结点 链表头插法
+>
+> 操作与链表相同，入栈与出栈的操作都在表头进行。
 
+```c
+typedef struct Linknode {
+		ElemType data;
+		struct Linknode *next;
+} *LiStack;
 
+// 不带头结点
+void Link_Push(Linknode &s, ElemType x) {  	
+    Linknode *node = (Linknode *)malloc(sizeof(Linknode));
+    node->data = x;
+  	node->next = s;
+  	s = node;
+}
 
-
-
-
-
-
-
-
-
-
-### 应用
-
-【题型】：给出入栈序列，**推导出栈序列个数，或者与队列结合**。
-
-> n个不同元素进栈，有种不同的出栈排列？
-
-
+// 带头结点
+void Link_Push(Linknode &s) {  	
+		s = (Linknode *)malloc(sizeof(Linknode));
+  	L->next = NULL;
+  	
+		int i;
+  	scanf("%d", &x);
+  	while(x != 9999) {
+     		Linknode *node = (Linknode *)malloc(sizeof(Linknode));
+      	node->data = x;
+      	node->next = L->next;
+      	L->next = node;		//头结点指向新结点
+    }
+}
+```
 
 
 
 ## 队列
+
+### 基本概念
+
+> 队列也是一种操作受限的线性表，只允许在一端进行插入，而在另一端进行删除。其操作特性是**先进先出 (First In First Out,FIFO)**
+>
+> - 队头（**Front**） 允许删除的一端
+> - 队尾（**Rear**） 允许插入的一端
+
+ **队列基本操作**
+
+```c
+InitQueue (&Q) 	// 初始化队列，构造一个空队列Q
+QueueEmpty (Q) 	// 判断列空，若队列Q为空返回true，否则返回false
+EnQueue (&Q,x) 	// 入队，若队列Q未满，将x加入，使之成为新的队尾
+DeQueue (&Q,&x) // 出队，若队列非空，删除队头元素并用x返回
+GetHead (Q,&x)  // 读取队头元素，若队列Q非空，则将队头元素赋值给x
+```
+
+
+
+### 队列的顺序存储结构
+
+```c
+#define Maxsize 50	//定义队列中元素的最大个数
+typedef struct{
+		ElemType data[MaxSize];	//存放队列元素
+		int front,rear;	//队头指针和队尾指针
+  	// 说明：front指向队头元素，rear指向队尾的下一个位置。
+}SqQueue;
+```
+
+* 初始状态：队空条件，Q.front = Q.rear = 0
+* 进队操作：队不满时，先送值到队尾元素，再将队尾指针+1
+* 出队操作：队不空时，先取队头元素，再将队头指针+1
+* **所以此处队列有明显缺陷，指针都在往后移动，导致前面空间的浪费。从而引出了循环队列。**
+
+```c
+// 初始化队列
+void InitQueue(SqQueue &Q) {
+ 		// 初始化时，队头与队尾指针指向0
+  	Q.rear = Q.front = 0;
+}
+
+// 判断队列是否为空
+bool QueueEmpty(SqQueue Q) {
+ 		if(Q.rear == Q.front) 
+      	return true;
+  	else 
+      	return false;
+}
+
+bool EnQueue(SqQueue &Q, ElemType e) {
+  	
+}
+
+//
+void testQueue() {
+  	SqQueue Q;
+  	InitQueue(Q);
+}
+```
+
+
+
+
+
+
+
+
+
+### 队列的链式存储结构
+
+
+
+### 双端队列
+
+
+
+
+
+
+
+
+
+
 
 
 
