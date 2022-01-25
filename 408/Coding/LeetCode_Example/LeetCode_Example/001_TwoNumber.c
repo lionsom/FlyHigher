@@ -1,4 +1,11 @@
-#include <stdio.h>
+//
+//  001_TwoNumber.c
+//  LeetCode_Example
+//
+//  Created by 林祥 on 2022/1/25.
+//
+
+#include "001_TwoNumber.h"
 
 int* twoSum(int* nums, int numsSize, int target, int* returnSize){
 
@@ -10,18 +17,6 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize){
     {
         /* code */
     }
-    
 
     return NULL;
-}
-
-int main() {
-
-    twoSum(NULL, 10, 1, NULL);
-
-    int AA[10] = {1,2,3,4,5,6,7,8,9,0};
-
-    printf("hahah");
-
-    return 0;
 }
