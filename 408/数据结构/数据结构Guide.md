@@ -1107,13 +1107,16 @@ GetHead (Q,&x)  // 读取队头元素，若队列Q非空，则将队头元素赋
 
 ### 队列的顺序存储结构
 
+![](media_Guide/第三章/循环队列（顺序存储）.png)
+
+
+
 ```c
 #define Maxsize 50	//定义队列中元素的最大个数
 typedef struct{
-		ElemType data[MaxSize];	//存放队列元素
-		int front,rear;	//队头指针和队尾指针
-  	// 说明：front指向队头元素，rear指向队尾的下一个位置。
-}SqQueue;
+	ElemType data[MaxSize];	// 静态数组存放队列元素
+	int front,rear;			// 队头指针和队尾指针，说明：front指向队头元素，rear指向队尾的下一个位置。
+}SqQueue;  // Sq: Sequence
 ```
 
 * 初始状态：队空条件，Q.front = Q.rear = 0
@@ -1124,20 +1127,22 @@ typedef struct{
 ```c
 // 初始化队列
 void InitQueue(SqQueue &Q) {
- 		// 初始化时，队头与队尾指针指向0
+ 	// 初始化时，队头与队尾指针指向0
   	Q.rear = Q.front = 0;
 }
 
 // 判断队列是否为空
 bool QueueEmpty(SqQueue Q) {
- 		if(Q.rear == Q.front) 
+ 	if(Q.rear == Q.front) 
       	return true;
   	else 
       	return false;
 }
 
 bool EnQueue(SqQueue &Q, ElemType e) {
-  	
+  	if (QueueEmpty(Q))
+        return false;
+    Q.data[Q.rear] = x;
 }
 
 //

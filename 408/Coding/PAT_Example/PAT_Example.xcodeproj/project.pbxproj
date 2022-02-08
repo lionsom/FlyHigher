@@ -11,7 +11,7 @@
 		991757ED279E90AD007C83DF /* test.c in Sources */ = {isa = PBXBuildFile; fileRef = 991757EC279E90AD007C83DF /* test.c */; };
 		991757F0279E915E007C83DF /* 001_3n+1.c in Sources */ = {isa = PBXBuildFile; fileRef = 991757EF279E915E007C83DF /* 001_3n+1.c */; };
 		991757F8279E9B3F007C83DF /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 991757F7279E9B3F007C83DF /* main.c */; };
-		991757FE279E9F88007C83DF /* 002.c in Sources */ = {isa = PBXBuildFile; fileRef = 991757FD279E9F88007C83DF /* 002.c */; };
+		99A7DE0C27B2558B00DC16FB /* 002.c in Sources */ = {isa = PBXBuildFile; fileRef = 991757FD279E9F88007C83DF /* 002.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -184,7 +184,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				991757FE279E9F88007C83DF /* 002.c in Sources */,
 				991757F0279E915E007C83DF /* 001_3n+1.c in Sources */,
 				991757E5279E9093007C83DF /* main.c in Sources */,
 				991757ED279E90AD007C83DF /* test.c in Sources */,
@@ -195,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99A7DE0C27B2558B00DC16FB /* 002.c in Sources */,
 				991757F8279E9B3F007C83DF /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
