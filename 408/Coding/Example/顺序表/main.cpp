@@ -1,3 +1,10 @@
+//
+//  main.c
+//  顺序表
+//
+//  Created by 启业云03 on 2022/2/8.
+//
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -68,7 +75,7 @@ void IncreaseSize(SeqList &L, int len) {
 
 //========================== 插入 ==========================
 
-/*	
+/*
  * 在顺序表 L LL 的第 i ii (1<=i<=L.length+1)个位置上插入新元素 e
  * 判断 i 的位置是否合法
  * 第 i 个元素及气候依次从后移动一个位置
@@ -104,7 +111,7 @@ bool ListDelete(SqList &L, int i, ElemType &e) {
     e = L.data[i - 1];   //将被删除的元素赋予e
 
     for (int j = i; j < L.length; j++) {
-        L.data[j - 1] = L.data[j]; 
+        L.data[j - 1] = L.data[j];
     }
 
     L.length--;
@@ -114,13 +121,13 @@ bool ListDelete(SqList &L, int i, ElemType &e) {
 //========================== 查找 ==========================
 
 /*
- * 在顺序表 L 中查找第一个元素值等于e的元素，并返回其位序 
+ * 在顺序表 L 中查找第一个元素值等于e的元素，并返回其位序
  */
 int LocateElem(SqList &L, ElemType &e) {
     for (int i = 0; i < L.length; i++) {
         if (L.data[i] == e) {
             return i + 1;      // 数组下标为e的元素,其位序为  i+1
-        }   
+        }
     }
     return 0;
 }
@@ -128,6 +135,9 @@ int LocateElem(SqList &L, ElemType &e) {
 //========================== main ==========================
 
 int main() {
+    // insert code here...
+    printf("Hello, World!\n");
+    
     // 方式一
     SqList L1 = InitList();
   
