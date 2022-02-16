@@ -898,7 +898,7 @@ typedef struct{
 ```
 
 - 栈顶指针：S.top，初始设置**S.top= -1**（有些辅导书从0开始）；栈顶元素**S.data[S.top]**
-- 进栈操作，栈不满时，栈顶指针先加 **1** ,再送值到栈顶元素
+- 进栈操作，栈不满时，栈顶指针先加 **1** ,再送值到栈顶元素 
 - 出栈操作：先取栈顶元素，再将栈顶指针减**1**
 - 栈空条件：**S.top=-1**; 栈满条件：**S.top==MaxSize-1**; 栈长：**S.top+1**
 
@@ -906,7 +906,7 @@ typedef struct{
 
 ```C
 void test() {
-		SqStack S;		// 声明一个顺序栈
+	SqStack S;		// 声明一个顺序栈
   	InitStack(S); // 初始化
 }
 ```
@@ -1054,8 +1054,8 @@ int Pop(int i,Elemtype x){
 
 ```c
 typedef struct Linknode {
-		ElemType data;
-		struct Linknode *next;
+	ElemType data;
+	struct Linknode *next;
 } *LiStack;
 
 // 不带头结点
@@ -1068,13 +1068,13 @@ void Link_Push(Linknode &s, ElemType x) {
 
 // 带头结点
 void Link_Push(Linknode &s) {  	
-		s = (Linknode *)malloc(sizeof(Linknode));
+	s = (Linknode *)malloc(sizeof(Linknode));
   	L->next = NULL;
   	
-		int i;
+	int i;
   	scanf("%d", &x);
   	while(x != 9999) {
-     		Linknode *node = (Linknode *)malloc(sizeof(Linknode));
+     	Linknode *node = (Linknode *)malloc(sizeof(Linknode));
       	node->data = x;
       	node->next = L->next;
       	L->next = node;		//头结点指向新结点
@@ -1151,12 +1151,6 @@ void testQueue() {
   	InitQueue(Q);
 }
 ```
-
-
-
-
-
-
 
 
 
