@@ -1162,11 +1162,11 @@ void testQueue() {
 
 ## 应用
 
-### 栈-括号匹配
+### 栈 - 括号匹配
 
 Demo在Example中
 
-### 栈-表达式
+### 栈 - 表达式
 
 > 波兰数学家
 >
@@ -1277,6 +1277,56 @@ Demo在Example中
 ![](media_Guide/第三章/前缀表达式机算.png)
 
 
+
+### 栈 - 递归
+
+> 适合使用递归算法：可以把原始问题转换为 **属性相同**，但 **规模较小** 的问题。
+>
+> 缺点：太多层递归可能会导致 **栈溢出** ！！
+
+![](media_Guide/第三章/栈-递归.png)
+
+```
+// eg1：n!
+int factorial(init n) {
+	if(n == 0 || n == 1) {
+		return 1;
+	} else {
+		return n*factorial(n-1);
+	}
+}
+
+int main() {
+	int x = factorial(10);
+	printf("%d", x);
+	return 0;
+}
+```
+
+![](media_Guide/第三章/栈-递归1.png)
+
+
+
+### 队列 - 树的层次遍历
+
+TODO...
+
+### 队列 - 图的广度优先遍历
+
+TODO...
+
+### 队列 - 操作系统的应用
+
+FCFS（First Come First Service）先来先服务
+
+* CPU资源分配
+* 打印机的数据缓冲区
+
+
+
+### 矩阵压缩存储
+
+![](media_Guide/第三章/矩阵压缩存储.png)
 
 
 
