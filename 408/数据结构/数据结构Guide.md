@@ -1328,6 +1328,24 @@ FCFS（First Come First Service）先来先服务
 
 ![](media_Guide/第三章/矩阵压缩存储.png)
 
+#### 一位数组
+
+> ElemType a[10];
+>
+> 起始地址：LOC
+>
+> 数组a[i]的存放地址 = LOC + i * sizeof(ElemType)     （0 <= i < 10，默认下标从0开始）
+>
+> 若从下标从1开始：a[i]的存放地址 = LOC + (i - 1) * sizeof(ElemType)  
+
+
+
+
+
+
+
+
+
 
 
 ## 考点3. 栈和队列
