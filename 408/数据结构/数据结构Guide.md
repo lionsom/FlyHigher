@@ -1493,7 +1493,69 @@ M行N列的二维数组 b\[M][N]中，若按照 `列优先` 存储，则
 
 
 
-## 串
+# 第四章：串
+
+> 串：字符串（string）由 **零个 或 多个字符** 组成的有限序列。
+>
+> 【注意】：位序从1开始
+
+![](media_Guide/第四章/串.png)
+
+```c
+// 基本操作
+Index(S, T);   // 定位操作
+StrCompare(S, T)	// 比较操作，每个字符在计算机中对应一个二进制数，字符比较 本质也就是 二进制数的比较
+```
+
+
+
+## 串的存储结构
+
+![](media_Guide/第四章/串_存储.png)
+
+**顺序存储**
+
+```c
+#define MAXLEN 255
+
+typedef struct {
+ 	char ch[MAXLEN];
+    int length;		// 串的实际长度
+} SString;	// 静态数组实现，定长顺序存储，自动申请、释放空间
+
+typedef struct {
+ 	char *ch;
+    int length;		// 串的实际长度
+} HString;	// 动态数组实现，堆分配存储，手动申请空间，手动释放空间
+```
+
+**链式存储**
+
+```c
+// 存储密度低，字符1B，指针4B
+typedef struct StringNode {
+	char ch;	// 每个结点1个字符
+    struct StringNode *next;		// 指针4字节
+} StringNode, *String;
+
+// 改进
+typedef struct StringNode {
+	char ch[4];		// 每个结点存多个字符
+    struct StringNode *next;
+}StringNode, *String;
+```
+
+### 基于顺序存储实现基本操作
+
+
+
+
+
+## 串的朴素匹配算法
+
+
+
+
 
 
 
