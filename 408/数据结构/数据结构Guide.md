@@ -1545,7 +1545,38 @@ typedef struct StringNode {
 }StringNode, *String;
 ```
 
+
+
 ### 基于顺序存储实现基本操作
+
+```c
+#define MAXLEN 255
+
+typedef struct {
+ 	char ch[MAXLEN];
+    int length;		// 串的实际长度
+} SString;	// 静态数组实现，定长顺序存储，自动申请、释放空间
+
+// 基本操作
+StrAssign(&T, chars); // 赋值操作，把串T赋值为chars
+StrCopy(&T, S); // 赋值操作，由串S复制得到串T
+StrEmpty(S); // 判空操作，若S为空串，则返回TRUE，否则返回FALSE
+StrLength(&S);  // 求串长，返回串S的元素个数
+ClearString(&S); // 清空操作，将S清为空串
+DestoryString(&S); // 销毁串。将串S销毁
+Concat(&T, S1, S2); // 串联接，用T返回由S1和S2链接而成的新串
+```
+
+#### 求子串
+
+```c
+bool SubString(SString &Sub, SString S, int pos, int len) {
+	// 子串范围是否越界
+    if (pos+len-1 > S.length) {
+        
+    
+}
+```
 
 
 
