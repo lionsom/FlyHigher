@@ -1538,7 +1538,7 @@ typedef struct StringNode {
     struct StringNode *next;		// 指针4字节
 } StringNode, *String;
 
-// 改进
+// 改进，提高存储密度
 typedef struct StringNode {
 	char ch[4];		// 每个结点存多个字符
     struct StringNode *next;
@@ -1565,18 +1565,29 @@ StrLength(&S);  // 求串长，返回串S的元素个数
 ClearString(&S); // 清空操作，将S清为空串
 DestoryString(&S); // 销毁串。将串S销毁
 Concat(&T, S1, S2); // 串联接，用T返回由S1和S2链接而成的新串
-```
 
-#### 求子串
-
-```c
+// 求子串，用sub返回S中第pos位序开始len长的子串
 bool SubString(SString &Sub, SString S, int pos, int len) {
 	// 子串范围是否越界
     if (pos+len-1 > S.length) {
-        
+    	return falses;
+    }
     
+    for(int i = pos; i < pos + len; i++){
+    	Sub.ch[i-pos] = S.ch[i];
+    }
+    Sub.length = len;
+    return true;
+}
+
+// 字符串比较
+int StrCompare(SString S, SString T) {
+	    
+   
 }
 ```
+
+
 
 
 
