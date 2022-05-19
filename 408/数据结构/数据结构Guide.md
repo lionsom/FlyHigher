@@ -1639,6 +1639,12 @@ int StrCompare(SString S, SString T) {
 
 ## 串的朴素匹配算法
 
+![](media_Guide/第四章/朴素_最坏时间复杂度.png)![](media_Guide/第四章/朴素_最好时间复杂度.png)
+
+
+
+
+
 
 
 
