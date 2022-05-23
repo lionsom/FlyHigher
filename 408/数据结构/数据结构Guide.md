@@ -1645,6 +1645,14 @@ int StrCompare(SString S, SString T) {
 
 
 
+## 串的KMP算法
+
+![](media_Guide/第四章/朴素 VS KMP.png)
+
+
+
+### 核心考点：计算next数组
+
 
 
 
