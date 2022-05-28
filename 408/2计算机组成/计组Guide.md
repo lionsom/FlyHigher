@@ -36,6 +36,10 @@
 
 ![](media/media_计组第一章/007.png)
 
+> 主存：内存
+>
+> 辅存：硬盘
+
 ![](media/media_计组第一章/008.png)
 
 ![](media/media_计组第一章/009.png)
@@ -46,15 +50,27 @@
 
 ![](media/media_计组第一章/各个硬件工作原理.png)
 
+### 主存储器（内存）
+
 ![](media/media_计组第一章/010.png)
+
+> MAR位数 反应 存储单元个数
+>
+> MDR位数 = 存储字长
+>
+> 宽带100Mbps = 100/8 MBps
 
 ![](media/media_计组第一章/012.png)
 
+### 运算器
+
 ![](media/media_计组第一章/011.png)
 
-
+### 控制器
 
 ![](media/media_计组第一章/013.png)
+
+### 计算机工作过程
 
 ![](media/media_计组第一章/014.png)
 
