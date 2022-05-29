@@ -192,19 +192,33 @@
 
 ### [《进制转换》](进制转换.md)
 
+> 练习：
+>
+> 二进制 101.1
+>
+> 八进制 5.4
+
 ![](media/media_计组第二章/001.png)
 
 
 
-## 2.2 数字的编码 - BCD码
+## 2.2 数字的编码 - BCD码（408大纲已删除）
 
 **BCD ：Binary-Coded Decimal，用二进制编码的十进制**：用4位`二进制数`来表示1位`十进制数`中的0~9这10个数码。
 
 ![](media/media_计组第二章/002.png)
 
+> 8421 有权码：xxxx 每一位分别代表 8 4 2 1
+>
+> 余3码 无权码
+>
+> 2421 改变权值  xxxx 每一位分别表示 2 4 2 1
+
 ![](media/media_计组第二章/003.png)
 
 ![](media/media_计组第二章/004.png)
+
+
 
 ## 2.3 字符与字符串
 
@@ -216,7 +230,7 @@
 
 ![](media/media_计组第二章/字符与字符串在计算机中如何表示.png)
 
-### 2.3.1 ASCII码
+### 2.3.1 英文字符 - ASCII码
 
 ​		[ASCII](https://zh.wikipedia.org/wiki/ASCII)编码：**American Standard Code for information Interchange（美国信息交换标准码）**，是基于**拉丁字母**的一套电脑[编码](https://baike.baidu.com/item/编码/80092)系统，主要用于显示现代 *英语*，而其扩展版本[EASCII](https://zh.wikipedia.org/wiki/EASCII)则可以部分支持其他[西欧](https://zh.wikipedia.org/wiki/西欧)[语言](https://zh.wikipedia.org/wiki/语言)，并等同于国际标准[ISO/IEC 646](https://zh.wikipedia.org/wiki/ISO/IEC_646)。ASCII第一次以规范标准的类型发表是在1967年，最后一次更新则是在1986年，到目前为止共定义了128个字符 。
 
