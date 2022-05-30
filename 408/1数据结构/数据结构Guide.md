@@ -1669,7 +1669,15 @@ int StrCompare(SString S, SString T) {
 
 
 
-## 树-基本术语
+## 1. 树-基本术语
+
+> - 结点的度：结点拥有子树数，称为结点的度；
+> - 树的度：树内部各结点的度的最大值；
+>
+> 
+>
+> - 叶结点：度为0的结点，称为叶结点（Leaf）或终端结点；
+> - 分支结点：度不为0的结点，称为分支结点；
 
 ![](media_Guide/第五章/树_基本术语.png)
 
@@ -1677,23 +1685,35 @@ int StrCompare(SString S, SString T) {
 
 ### 常见考点 - 树的性质
 
+![](media_Guide/第五章/树性质总结.jpg)
+
 1. 结点数 = 总度数 + 1
 
     结点的度 = 该结点有几个孩子（分支）
 
 2. 树的度 VS m叉树
 
-    ![](media_Guide/第五章/树的度 VS m叉树.png)
+    ![](media_Guide/第五章/树性质2.png)
 
     3. 度为m的树**第 i 层**至多有**『m 的 i-1 次方』**个结点
 
-        ![](media_Guide/第五章/树i层的结点数.png)
+        ![](media_Guide/第五章/树性质3.png)
 
-    4. ![](media_Guide/第五章/数的总结点数.png)
+    4. 等比求和公式![](media_Guide/第五章/树性质4.png)
+
+5. ![](media_Guide/第五章/树性质5.jpg)
+
+6. 向上取整![](media_Guide/第五章/树性质6.jpg)
 
 
 
 
+
+## 2. 二叉树
+
+![](media_Guide/第五章/二叉树定义.png)
+
+![](media_Guide/第五章/二叉树五种状态.png)
 
 
 
