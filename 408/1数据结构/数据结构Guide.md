@@ -1717,6 +1717,73 @@ int StrCompare(SString S, SString T) {
 
 
 
+### 特殊二叉树
+
+* 满二叉树
+* 完全二叉树
+* 二叉排序树
+* 平衡二叉树
+
+![](media_Guide/第五章/满二叉树VS完全二叉树.png)
+
+![](media_Guide/第五章/二叉排序树.jpg)![](media_Guide/第五章/平衡二叉树.jpg)
+
+
+
+### 常见考点 - 二叉树性质
+
+![](media_Guide/第五章/二叉树性质.jpg)
+
+![](media_Guide/第五章/二叉树性质1.jpg)
+
+![](media_Guide/第五章/二叉树性质2.jpg)
+
+![](media_Guide/第五章/二叉树性质3.jpg)
+
+
+
+### 常见考点 - 完全二叉树性质
+
+![](media_Guide/第五章/完全二叉树性质1_1.jpg)
+
+![](media_Guide/第五章/完全二叉树性质1_2.jpg)
+
+![](media_Guide/第五章/完全二叉树性质2.jpg)
+
+
+
+## 3. 二叉树存储结构
+
+### 顺序存储
+
+
+
+
+
+
+
+
+
+### 链式存储
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
