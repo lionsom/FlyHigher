@@ -1754,7 +1754,7 @@ int StrCompare(SString S, SString T) {
 
 ## 3. 二叉树存储结构
 
-### 顺序存储
+### 顺序存储 - 不推荐
 
 
 
@@ -1767,6 +1767,12 @@ int StrCompare(SString S, SString T) {
 ### 链式存储
 
 
+
+
+
+
+
+## 4. 二叉树遍历
 
 
 
