@@ -1780,6 +1780,20 @@ int StrCompare(SString S, SString T) {
 
 
 
+## 5. 二叉树层序遍历
+
+![](media_Guide/第五章/二叉树层序遍历.png)
+
+![](media_Guide/第五章/二叉树层序遍历代码.png)
+
+
+
+
+
+
+
+## 6. 由序列构建二叉树
+
 
 
 
