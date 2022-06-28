@@ -1764,11 +1764,9 @@ int StrCompare(SString S, SString T) {
 
 ### 链式存储
 
+![](media_Guide/第五章/二叉树链式存储.jpg)
 
-
-
-
-
+![](media_Guide/第五章/二叉树链式存储考点.jpg)
 
 
 
@@ -1776,23 +1774,38 @@ int StrCompare(SString S, SString T) {
 
 ## 4. 二叉树遍历
 
+**二叉树递归特性**
+
+> 1. 要么是空树；
+> 2. 要是就是由『根节点+左子树+右子树』组成。
+
+**顺序**
+
+![](media_Guide/第五章/二叉树遍历.jpg)
+
+### 手算练习
+
+![](media_Guide/第五章/二叉树遍历01.jpg)
+
+![](media_Guide/第五章/二叉树遍历02.jpg)
+
+![](media_Guide/第五章/二叉树遍历03.jpg)
+
+
+
+### 代码
+
+![](media_Guide/第五章/二叉树遍历代码.png)
+
+### 应用
+
+![](media_Guide/第五章/二叉树遍历应用.jpg)
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+## 5.二叉树层序遍历
 
 
 
