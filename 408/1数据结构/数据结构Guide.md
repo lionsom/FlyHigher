@@ -1880,6 +1880,8 @@ int StrCompare(SString S, SString T) {
 
 #### 中序二叉树线索化
 
+> **核心**：利用n+1个空链域记录前驱与后继！！！
+
 ![](media_Guide/第五章/线索化二叉树_中序.png)
 
 #### 前序二叉树线索化
