@@ -27,3 +27,11 @@ https://monitor.roombox.xdf.cn/roombox/record/merged/2022/06/10/_77892321.mp4
 1998 年Text 4 作业讲解
 
 https://monitor.roombox.xdf.cn/roombox/record/merged/2022/06/10/_77892618.mp4
+
+1998 年Text 5 作业讲解
+https://monitor.roombox.xdf.cn/roombox/record/merged/2022/06/10/_77892849.mp4
+
+
+
+1999-text 1 作业讲解
+https://monitor.roombox.xdf.cn/roombox/record/merged/2022/06/17/_78364892.mp4
