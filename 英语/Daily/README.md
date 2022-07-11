@@ -35,3 +35,13 @@ https://monitor.roombox.xdf.cn/roombox/record/merged/2022/06/10/_77892849.mp4
 
 1999-text 1 作业讲解
 https://monitor.roombox.xdf.cn/roombox/record/merged/2022/06/17/_78364892.mp4
+
+1999-text 2 作业讲解
+https://monitor.roombox.xdf.cn/roombox/record/merged/2022/06/17/_78365085.mp4
+
+1999-text 3     
+https://monitor.roombox.xdf.cn/roombox/record/merged/2022/06/17/_78365175.mp4
+
+1999-text 4
+
+https://monitor.roombox.xdf.cn/roombox/record/merged/2022/06/17/_78365303.mp4

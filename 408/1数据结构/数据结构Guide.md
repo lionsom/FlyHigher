@@ -1970,17 +1970,15 @@ int StrCompare(SString S, SString T) {
 
 
 
-## 8.树
+## 8.树的存储结构
 
+![](media_Guide/第五章/树的存储结构.png)
 
+### 双亲表示法（顺序存储）
 
+> 
 
-
-
-
-
-
-
+![](media_Guide/第五章/树存储_双亲表示法.png)
 
 # 第六章：图
 
