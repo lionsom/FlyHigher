@@ -58,7 +58,9 @@ https://monitor.roombox.xdf.cn/roombox/record/merged/2022/06/24/_78897150.mp4
 2000 text 2 作业讲解
 https://monitor.roombox.xdf.cn/roombox/record/merged/2022/06/24/_78897225.mp4
 
+2000 text 3 作业讲解 
 
+https://monitor.roombox.xdf.cn/roombox/record/merged/2022/06/24/_78897381.mp4
 
 
 
